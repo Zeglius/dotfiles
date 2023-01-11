@@ -143,4 +143,3 @@ export PATH=$HOME/.local/bin:$PATH
 
 # micro
 export EDITOR="$(which micro)"
-echo "bye"
