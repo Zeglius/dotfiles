@@ -122,7 +122,6 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Starship
 eval "$(starship init bash)"
-export EDITOR=/usr/bin/nano
 
 # act
 export PATH="$PATH:$HOME/.act/bin"
@@ -138,4 +137,10 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # Add ~/.local/bin/ to PATH (includes this list):
 #   - chezmoi
+#	- micro
 export PATH=$HOME/.local/bin:$PATH
+
+
+# micro
+export EDITOR="$(which micro)"
+echo "bye"
