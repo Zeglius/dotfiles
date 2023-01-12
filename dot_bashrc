@@ -132,8 +132,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun
-[ -d "$HOME/.bun" ] && export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
+if [ -d "$HOME/.bun" ]; then
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH=$PATH:$BUN_INSTALL/bin
+fi
 
 # Add ~/.local/bin/ to PATH (includes this list):
 #   - chezmoi
@@ -142,4 +144,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 
 # micro
-export EDITOR="$(which micro)"
+where_micro=$(which 'micro')
+export EDITOR=$where_micro
+	
